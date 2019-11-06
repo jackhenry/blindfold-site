@@ -18,21 +18,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Suggestions({ input }) {
+function Suggestions({ input }: { input: string }) {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const filterInput = useSelector(state => state.filter.filterInputText);
-  const teams = useSelector(state => state.teams.library);
-  const suggestions = useSelector(state => state.filter.suggestions);
+  const filterInput = useSelector((state: any) => state.filter.filterInputText);
+  const teams = useSelector((state: any) => state.teams.library);
+  const suggestions = useSelector((state: any) => state.filter.suggestions);
 
-  const [fuse, setFuse] = useState(null);
+  const [fuse, setFuse] = useState<any>(null);
 
   //Load team data
   useEffect(() => {
     const { nfl, nhl, nba } = TeamData;
 
-    const aggregate = [];
+    const aggregate: any = [];
 
     nfl.forEach(team => {
       aggregate.push(team);
@@ -70,7 +70,7 @@ function Suggestions({ input }) {
 
   if (!suggestions) return null;
 
-  return suggestions.map((suggestion, index) => (
+  return suggestions.map((suggestion: any, index: any) => (
     <div className={classes.suggestionItemWrapper}>
       <SuggestionItem data={suggestion} key={index} />
     </div>

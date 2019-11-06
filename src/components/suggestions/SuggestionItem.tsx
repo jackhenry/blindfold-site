@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SuggestionItem({ data }) {
+function SuggestionItem({ data }: { data: any }) {
   const classes = useStyles();
 
   console.log(data.image);
@@ -51,7 +51,7 @@ function SuggestionItem({ data }) {
               width: 64,
               padding: 8
             }}
-            src={getImageUrl(data.image)}
+            src={data.image}
             alt={`${data.name} team logo`}
           />
         )}
@@ -111,7 +111,7 @@ function SuggestionItem({ data }) {
   );
 }
 
-function SportIcon({ league }) {
+function SportIcon({ league }: { league: string }) {
   const style = {
     marginLeft: 2,
     height: 16,
@@ -137,13 +137,5 @@ function SportIcon({ league }) {
       return <FootballIcon style={style} />;
   }
 }
-
-const getImageUrl = image => {
-  if (image.includes("https")) {
-    return image;
-  }
-
-  return require(`../../assets/img/nba/timberwolves.png`);
-};
 
 export default SuggestionItem;

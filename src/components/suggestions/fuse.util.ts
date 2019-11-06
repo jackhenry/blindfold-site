@@ -1,10 +1,10 @@
 import Fuse from "fuse.js";
 
-export function createFuseObject(list, keys) {
+export function createFuseObject(list: any, keys: string[]) {
   return new Fuse(list, getFuseOptions(keys));
 }
 
-function getFuseOptions(keys) {
+function getFuseOptions(keys: string[]) {
   return {
     shouldSort: true,
     threshold: 0.2,
