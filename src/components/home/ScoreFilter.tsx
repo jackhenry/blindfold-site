@@ -29,13 +29,13 @@ function ScoreFilter() {
 
   const [input, setInput] = useState("");
 
-  const handleInput = newInput => {
+  const handleInput = (newInput: string) => {
     setInput(newInput);
   };
 
   return (
     <div className={classes.inputContainer}>
-      <AutocompleteInput onInputChange={handleInput} />
+      <AutocompleteInput />
       <div className={classes.suggestionWrapper}>
         <Suggestions input={input} />
       </div>

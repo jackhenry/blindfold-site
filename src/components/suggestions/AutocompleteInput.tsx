@@ -36,19 +36,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function AutocompleteInput({ onInputChange }) {
+function AutocompleteInput() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const [expand, setExpand] = useState(false);
 
-  const handleInputChange = value => {
+  const handleInputChange = (value: string) => {
     if (value !== "" && value !== null) setExpand(true);
     dispatch(updateInputFocus(true));
     dispatch(changeFilterInput(value));
   };
 
-  const handleClickaway = hasFocus => {
+  const handleClickaway = (hasFocus: boolean) => {
     setExpand(false);
     dispatch(updateInputFocus(false));
   };
