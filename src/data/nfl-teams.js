@@ -522,7 +522,8 @@ export default {
       name: "Vegas Golden Knights",
       teamID: "VGK",
       city: "Las Vegas",
-      state: "NV"
+      state: "NV",
+      image: "https://i.postimg.cc/dV819pn2/goldenknights.png"
     },
     {
       name: "Washington Capitals",
@@ -537,6 +538,278 @@ export default {
       city: "Winnipeg",
       state: "MB",
       image: "https://i.postimg.cc/0zVR1V6f/jets.png"
+    }
+  ],
+  nba: [
+    {
+      teamId: 1610612737,
+      abbreviation: "ATL",
+      name: "Atlanta Hawks",
+      simpleName: "Hawks",
+      city: "Atlanta",
+      state: "GA",
+      image: "https://i.postimg.cc/Lnr3R7YB/hawks.png"
+    },
+    {
+      teamId: 1610612738,
+      abbreviation: "BOS",
+      name: "Boston Celtics",
+      simpleName: "Celtics",
+      city: "Boston",
+      state: "MA",
+      image: "https://i.postimg.cc/ctCB4GBT/celtics.png"
+    },
+    {
+      teamId: 1610612751,
+      abbreviation: "BKN",
+      name: "Brooklyn Nets",
+      simpleName: "Nets",
+      city: "Brooklyn",
+      state: "NY",
+      image: "https://i.postimg.cc/XXY8g96F/nets.png"
+    },
+    {
+      teamId: 1610612766,
+      abbreviation: "CHA",
+      name: "Charlotte Hornets",
+      simpleName: "Hornets",
+      city: "Charlotte",
+      state: "NC",
+      image: "https://i.postimg.cc/F7J0PZWf/hornets.png"
+    },
+    {
+      teamId: 1610612741,
+      abbreviation: "CHI",
+      name: "Chicago Bulls",
+      simpleName: "Bulls",
+      city: "Chicago",
+      state: "IL",
+      image: "https://i.postimg.cc/SJ5DRR59/bulls.png"
+    },
+    {
+      teamId: 1610612739,
+      abbreviation: "CLE",
+      name: "Cleveland Cavaliers",
+      simpleName: "Cavaliers",
+      city: "Cleveland",
+      state: "OH",
+      image: "https://i.postimg.cc/QHVfj16s/cavaliers.png"
+    },
+    {
+      teamId: 1610612742,
+      abbreviation: "DAL",
+      name: "Dallas Mavericks",
+      simpleName: "Mavericks",
+      city: "Dallas",
+      state: "TX",
+      image: "https://i.postimg.cc/8FGdf6b7/mavericks.png"
+    },
+    {
+      teamId: 1610612743,
+      abbreviation: "DEN",
+      name: "Denver Nuggets",
+      simpleName: "Nuggets",
+      city: "Denver",
+      state: "CO",
+      image: "https://i.postimg.cc/w7tQCHvj/nuggets.png"
+    },
+    {
+      teamId: 1610612765,
+      abbreviation: "DET",
+      name: "Detroit Pistons",
+      simpleName: "Pistons",
+      city: "Detroit",
+      state: "MI",
+      image: "https://i.postimg.cc/ThsrqS9M/pistons.png"
+    },
+    {
+      teamId: 1610612744,
+      abbreviation: "GSW",
+      name: "Golden State Warriors",
+      simpleName: "Warriors",
+      city: "Golden State",
+      state: "CA",
+      image: "https://i.postimg.cc/yk9ShNxc/warriors.png"
+    },
+    {
+      teamId: 1610612745,
+      abbreviation: "HOU",
+      name: "Houston Rockets",
+      simpleName: "Rockets",
+      city: "Houston",
+      state: "TX",
+      image: "https://i.postimg.cc/9DdZ2fjC/rockets.png"
+    },
+    {
+      teamId: 1610612754,
+      abbreviation: "IND",
+      name: "Indiana Pacers",
+      simpleName: "Pacers",
+      city: "Indianapolis",
+      state: "IN",
+      image: "https://i.postimg.cc/D4S13d7M/pacers.png"
+    },
+    {
+      teamId: 1610612746,
+      abbreviation: "LAC",
+      name: "Los Angeles Clippers",
+      simpleName: "Clippers",
+      city: "Los Angeles",
+      state: "CA",
+      image: "https://i.postimg.cc/4Y9w9ZkS/clippers.png"
+    },
+    {
+      teamId: 1610612747,
+      abbreviation: "LAL",
+      name: "Los Angeles Lakers",
+      simpleName: "Lakers",
+      city: "Los Angeles",
+      state: "CA",
+      image: "https://i.postimg.cc/94PpLpfP/lakers.png"
+    },
+    {
+      teamId: 1610612763,
+      abbreviation: "MEM",
+      name: "Memphis Grizzlies",
+      simpleName: "Grizzlies",
+      city: "Memphis",
+      state: "TN",
+      image: "https://i.postimg.cc/dDN9NDJf/grizzlies.png"
+    },
+    {
+      teamId: 1610612748,
+      abbreviation: "MIA",
+      name: "Miami Heat",
+      simpleName: "Heat",
+      city: "Miami",
+      state: "FL",
+      image: "https://i.postimg.cc/dhrm0BGM/heat.png"
+    },
+    {
+      teamId: 1610612749,
+      abbreviation: "MIL",
+      name: "Milwaukee Bucks",
+      simpleName: "Bucks",
+      city: "Milwaukee",
+      state: "WI",
+      image: "https://i.postimg.cc/McJ504zK/bucks.png"
+    },
+    {
+      teamId: 1610612750,
+      abbreviation: "MIN",
+      name: "Minnesota Timberwolves",
+      simpleName: "Timberwolves",
+      city: "Minneapolis",
+      state: "MN",
+      image: "https://i.postimg.cc/nMNDQmFn/timberwolves.png"
+    },
+    {
+      teamId: 1610612740,
+      abbreviation: "NOP",
+      name: "New Orleans Pelicans",
+      simpleName: "Pelicans",
+      city: "New Orleans",
+      state: "LA",
+      image: "https://i.postimg.cc/MXH7Bx1m/pelicans.png"
+    },
+    {
+      teamId: 1610612752,
+      abbreviation: "NYK",
+      name: "New York Knicks",
+      simpleName: "Knicks",
+      city: "New York",
+      state: "NY",
+      image: "https://i.postimg.cc/hzp0BtTf/knicks.png"
+    },
+    {
+      teamId: 1610612760,
+      abbreviation: "OKC",
+      name: "Oklahoma City Thunder",
+      simpleName: "Thunder",
+      city: "Oklahoma City",
+      state: "OK",
+      image: "https://i.postimg.cc/LYX1jBg8/thunder.png"
+    },
+    {
+      teamId: 1610612753,
+      abbreviation: "ORL",
+      name: "Orlando Magic",
+      simpleName: "Magic",
+      city: "Orlando",
+      state: "FL",
+      image: "https://i.postimg.cc/cgsc2nKp/magic.png"
+    },
+    {
+      teamId: 1610612755,
+      abbreviation: "PHI",
+      name: "Philadelphia 76ers",
+      simpleName: "76ers",
+      city: "Philadelphia",
+      state: "PA",
+      image: "https://i.postimg.cc/z3xdm0F0/76ers.png"
+    },
+    {
+      teamId: 1610612756,
+      abbreviation: "PHX",
+      name: "Phoenix Suns",
+      simpleName: "Suns",
+      city: "Phoenix",
+      state: "AZ",
+      image: "https://i.postimg.cc/NybXyPMn/suns.png"
+    },
+    {
+      teamId: 1610612757,
+      abbreviation: "POR",
+      name: "Portland Trail Blazers",
+      simpleName: "Trail Blazers",
+      city: "Portland",
+      state: "OR",
+      image: "https://i.postimg.cc/RJJJDSRr/trailblazers.png"
+    },
+    {
+      teamId: 1610612758,
+      abbreviation: "SAC",
+      name: "Sacramento Kings",
+      simpleName: "Kings",
+      city: "Sacramento",
+      state: "CA",
+      image: "https://i.postimg.cc/sQ65L0CW/kings.png"
+    },
+    {
+      teamId: 1610612759,
+      abbreviation: "SAS",
+      name: "San Antonio Spurs",
+      simpleName: "Spurs",
+      city: "San Antonio",
+      state: "TX",
+      image: "https://i.postimg.cc/1gy63Z96/spurs.png"
+    },
+    {
+      teamId: 1610612761,
+      abbreviation: "TOR",
+      name: "Toronto Raptors",
+      simpleName: "Raptors",
+      city: "Toronto",
+      state: "ON",
+      image: "https://i.postimg.cc/SnFCHM3g/raptors.png"
+    },
+    {
+      teamId: 1610612762,
+      abbreviation: "UTA",
+      name: "Utah Jazz",
+      simpleName: "Jazz",
+      city: "Salt Lake City",
+      state: "UT",
+      image: "https://i.postimg.cc/ZBKrVz2Z/jazz.png"
+    },
+    {
+      teamId: 1610612764,
+      abbreviation: "WAS",
+      name: "Washington Wizards",
+      simpleName: "Wizards",
+      city: "Washington D.C.",
+      state: "DC",
+      image: "https://i.postimg.cc/LhJPXDMy/wizards.png"
     }
   ]
 };

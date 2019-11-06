@@ -30,7 +30,7 @@ function Suggestions({ input }) {
 
   //Load team data
   useEffect(() => {
-    const { nfl, nhl } = TeamData;
+    const { nfl, nhl, nba } = TeamData;
 
     const aggregate = [];
 
@@ -42,6 +42,13 @@ function Suggestions({ input }) {
       aggregate.push({
         ...team,
         league: "NHL"
+      });
+    });
+
+    nba.forEach(team => {
+      aggregate.push({
+        ...team,
+        league: "NBA"
       });
     });
 

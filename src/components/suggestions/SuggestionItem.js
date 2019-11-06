@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
 
 import AddIcon from "@material-ui/icons/AddCircleOutline";
-import Chip from "@material-ui/core/Chip";
+import BasketballIcon from "@material-ui/icons/SportsBasketball";
 import FootballIcon from "@material-ui/icons/SportsFootball";
 import HockeyIcon from "@material-ui/icons/SportsHockey";
 
@@ -32,6 +32,8 @@ const useStyles = makeStyles(theme => ({
 function SuggestionItem({ data }) {
   const classes = useStyles();
 
+  console.log(data.image);
+
   const [highlighted, setHighlighted] = useState(false);
 
   return (
@@ -49,7 +51,7 @@ function SuggestionItem({ data }) {
               width: 64,
               padding: 8
             }}
-            src={data.image}
+            src={getImageUrl(data.image)}
             alt={`${data.name} team logo`}
           />
         )}
@@ -122,9 +124,26 @@ function SportIcon({ league }) {
       return <FootballIcon style={style} />;
     case "NHL":
       return <HockeyIcon style={style} />;
+    case "NBA":
+      return (
+        <BasketballIcon
+          style={{
+            ...style,
+            fill: "#FA8320"
+          }}
+        />
+      );
     default:
       return <FootballIcon style={style} />;
   }
 }
+
+const getImageUrl = image => {
+  if (image.includes("https")) {
+    return image;
+  }
+
+  return require(`../../assets/img/nba/timberwolves.png`);
+};
 
 export default SuggestionItem;
