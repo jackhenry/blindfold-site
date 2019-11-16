@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { createFuseObject } from "./fuse.util";
 
-import TeamData from "../../data/nfl-teams";
+import TeamData from "../../data/teams";
 import { loadTeamData } from "../../redux/modules/teams";
 import { updateSuggestions } from "../../redux/modules/filter";
 import SuggestionItem from "./SuggestionItem";
