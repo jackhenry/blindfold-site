@@ -32,8 +32,6 @@ const useStyles = makeStyles(theme => ({
 function SuggestionItem({ data }: { data: any }) {
   const classes = useStyles();
 
-  console.log(data.image);
-
   const [highlighted, setHighlighted] = useState(false);
 
   return (
