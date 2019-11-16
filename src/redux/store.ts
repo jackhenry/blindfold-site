@@ -1,6 +1,8 @@
-import { combineReducers, compose, createStore } from "redux";
+import { combineReducers, compose, createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 import filter from "./modules/filter";
+import scoreboard from "./modules/scoreboard";
 import teams from "./modules/teams";
 
 declare global {
@@ -13,7 +15,11 @@ const devtools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   filter,
+  scoreboard,
   teams
 });
 
-export const store = createStore(rootReducer, devtools());
+export const store = createStore(
+  rootReducer,
+  compose(applyMiddleware(thunk), devtools())
+);
