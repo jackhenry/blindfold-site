@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Suggestions({ input }: { input: string }) {
+function Suggestions() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -30,29 +30,7 @@ function Suggestions({ input }: { input: string }) {
 
   //Load team data
   useEffect(() => {
-    const { nfl, nhl, nba } = TeamData;
-
-    const aggregate: any = [];
-
-    nfl.forEach(team => {
-      aggregate.push(team);
-    });
-
-    nhl.forEach(team => {
-      aggregate.push({
-        ...team,
-        league: "NHL"
-      });
-    });
-
-    nba.forEach(team => {
-      aggregate.push({
-        ...team,
-        league: "NBA"
-      });
-    });
-
-    dispatch(loadTeamData(aggregate));
+    dispatch(loadTeamData(TeamData));
   }, [dispatch]);
 
   useEffect(() => {
