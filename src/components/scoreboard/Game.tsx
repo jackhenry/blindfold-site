@@ -110,7 +110,7 @@ function Game({ data }: { data: Scoreboard }) {
         </div>
         <Divider
           style={{
-            margin: 8
+            marginTop: 6
           }}
           className={clsx(false && classes.hidden)}
         />
