@@ -60,16 +60,28 @@ export default function reducer(state = initialState, action) {
         scoreboards: action.scoreboards
       };
     case UPDATE_SCOREBOARD:
-      const { gameId } = action.update;
+      const { gameId, league } = action.update;
+
+      //No point in updating the update is for a league the user is not viewing
+      if (league !== state.league) return { ...state };
+
       const index = state.scoreboards.findIndex(
         scoreboard => scoreboard.gameId === gameId
       );
+      const currentScoreboard = state.scoreboards[index];
 
+      //Omit all the fields from the current scoreboard that are listed in the update
+      const omitted = Omit(currentScoreboard, Object.keys(action.update));
+      //Create new scoreboard object with values from update object
+      const updatedScoreboard = {
+        ...omitted,
+        ...action.update
+      };
       return {
         ...state,
         scoreboards: [
           ...state.scoreboards.slice(0, index),
-          action.update,
+          updatedScoreboard,
           ...state.scoreboards.slice(index + 1)
         ]
       };
@@ -78,20 +90,10 @@ export default function reducer(state = initialState, action) {
   }
 }
 
-export function liveUpdate(scoreboards, updates) {
+export function liveUpdate(updates) {
   return dispatch => {
     updates.forEach(update => {
-      scoreboards.forEach(scoreboard => {
-        if (scoreboard.gameId === update.gameId) {
-          const omitted = Omit(scoreboard, Object.keys(update));
-          const updatedScoreboard = {
-            ...omitted,
-            ...update
-          };
-
-          dispatch(updateScoreboard(updatedScoreboard));
-        }
-      });
+      dispatch(updateScoreboard(update));
     });
   };
 }
