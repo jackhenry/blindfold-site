@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AutocompleteInput from "../suggestions/AutocompleteInput";
 import Suggestions from "../suggestions/Suggestions";
@@ -27,17 +27,11 @@ const useStyles = makeStyles(theme => ({
 function ScoreFilter() {
   const classes = useStyles();
 
-  const [input, setInput] = useState("");
-
-  const handleInput = (newInput: string) => {
-    setInput(newInput);
-  };
-
   return (
     <div className={classes.inputContainer}>
       <AutocompleteInput />
       <div className={classes.suggestionWrapper}>
-        <Suggestions input={input} />
+        <Suggestions />
       </div>
     </div>
   );
