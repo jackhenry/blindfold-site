@@ -19,15 +19,13 @@ function ScoreboardContainer() {
   );
 
   useEffect(() => {
-    if (scoreboards) {
-      // data property not generic for MessageEvent
-      source.addEventListener("scoreboard", (message: any) => {
-        console.log("received message...");
-        const updates = JSON.parse(message.data);
-        dispatch(liveUpdate(scoreboards, updates));
-      });
-    }
-  }, [scoreboards]);
+    // data property not generic for MessageEvent
+    source.addEventListener("scoreboard", (message: any) => {
+      console.log("received message...");
+      const updates = JSON.parse(message.data);
+      dispatch(liveUpdate(updates));
+    });
+  }, []);
 
   useEffect(() => {
     const { query, name } = Definitions.scoreboards;
