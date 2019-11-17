@@ -80,13 +80,3 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
-
-export function liveUpdate(updates) {
-  return dispatch => {
-    console.time("live update");
-    updates.forEach(update => {
-      dispatch(updateScoreboard(update));
-    });
-    console.timeEnd("live update");
-  };
-}
