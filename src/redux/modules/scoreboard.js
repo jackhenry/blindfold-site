@@ -6,7 +6,7 @@ const CHANGE_LEAGUE = "scoreboard/CHANGE_LEAGUE";
 const CHANGE_FILTER = "scoreboard/CHANGE_FILTER";
 const LOAD_FILTERS = "scoreboard/LOAD_FILTERS";
 const SET_SCOREBOARDS = "scoreboard/SET_SCOREBOARDS";
-const UPDATE_SCOREBOARD = "scoreboard/UPDATE_SCOREBOARD";
+const UPDATE_MANY_SCORES = "scoreboard/UPDATE_MANY_SCOREBOARDS";
 
 export function changeLeague(league) {
   return { type: CHANGE_LEAGUE, league };
@@ -24,8 +24,8 @@ export function setScoreboards(scoreboards) {
   return { type: SET_SCOREBOARDS, scoreboards };
 }
 
-export function updateScoreboard(update) {
-  return { type: UPDATE_SCOREBOARD, update };
+export function updateManyScoreboards(updates) {
+  return { type: UPDATE_MANY_SCORES, updates };
 }
 
 const initialState = {
@@ -59,32 +59,23 @@ export default function reducer(state = initialState, action) {
         ...state,
         scoreboards: action.scoreboards
       };
-    case UPDATE_SCOREBOARD:
-      const { gameId, league } = action.update;
+    case UPDATE_MANY_SCORES:
+      const updatedScoreboards = state.scoreboards.map(scoreboard => {
+        const update = action.updates.find(
+          update => scoreboard.gameId === update.gameId
+        );
 
-      //No point in updating the update is for a league the user is not viewing
-      if (league !== state.league) return { ...state };
+        if (!update) return scoreboard;
 
-      const index = state.scoreboards.findIndex(
-        scoreboard => scoreboard.gameId === gameId
-      );
-      const currentScoreboard = state.scoreboards[index];
+        const omitted = Omit(scoreboard, Object.keys(update));
 
-      //Omit all the fields from the current scoreboard that are listed in the update
-      const omitted = Omit(currentScoreboard, Object.keys(action.update));
-      //Create new scoreboard object with values from update object
-      const updatedScoreboard = {
-        ...omitted,
-        ...action.update
-      };
-      return {
-        ...state,
-        scoreboards: [
-          ...state.scoreboards.slice(0, index),
-          updatedScoreboard,
-          ...state.scoreboards.slice(index + 1)
-        ]
-      };
+        return {
+          ...update,
+          ...omitted
+        };
+      });
+
+      return { ...state, scoreboards: updatedScoreboards };
     default:
       return state;
   }
@@ -92,8 +83,10 @@ export default function reducer(state = initialState, action) {
 
 export function liveUpdate(updates) {
   return dispatch => {
+    console.time("live update");
     updates.forEach(update => {
       dispatch(updateScoreboard(update));
     });
+    console.timeEnd("live update");
   };
 }

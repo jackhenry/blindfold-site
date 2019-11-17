@@ -6,7 +6,10 @@ import Definitions from "../../util/query.definitions";
 import { Scoreboard } from "./interfaces/scoreboard.interface";
 import Game from "./Game";
 import { useEventSource } from "../../providers/SSEProvider";
-import { setScoreboards, liveUpdate } from "../../redux/modules/scoreboard";
+import {
+  setScoreboards,
+  updateManyScoreboards
+} from "../../redux/modules/scoreboard";
 
 function ScoreboardContainer() {
   const dispatch = useDispatch();
@@ -21,9 +24,8 @@ function ScoreboardContainer() {
   useEffect(() => {
     // data property not generic for MessageEvent
     source.addEventListener("scoreboard", (message: any) => {
-      console.log("received message...");
       const updates = JSON.parse(message.data);
-      dispatch(liveUpdate(updates));
+      dispatch(updateManyScoreboards(updates));
     });
   }, []);
 
