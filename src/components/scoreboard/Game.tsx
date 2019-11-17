@@ -60,22 +60,6 @@ function Game({ data }: { data: Scoreboard }) {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            marginBottom: 8,
-            fontWeight: 700
-          }}
-        >
-          <span
-            style={{
-              fontWeight: 700
-            }}
-          >
-            {format(new Date(data.date), "MMMM do")}
-          </span>
-        </div>
         <div className={classes.teamWrapper}>
           <div className={classes.teamNames}>
             <div style={{ display: "flex", alignItems: "center" }}>
